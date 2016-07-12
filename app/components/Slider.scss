@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.slider {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+
+    &>ul {
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+        transition: left 1s;
+    }
+
+    .slider-item {
+        display: inline-block;
+        height: auto;
+
+        &>img {
+            display: block;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+
+    .slider-arrow {
+        display: inline-block;
+        color: #fff;
+        font-size: 50px;
+        position: absolute; 
+    }
+}
+
+
+
+
+
+
