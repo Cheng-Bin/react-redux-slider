@@ -4,7 +4,6 @@
   "description": "基于ReactJS的轮播",
   "main": "index.js",
   "scripts": {
-    "dist": "npm run clean && NODE_ENV=production webpack --progress --colors",
     "server": "node server.js",
     "build": "webpack --progress --colors --watch"
   },

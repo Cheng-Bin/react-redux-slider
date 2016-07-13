@@ -12,8 +12,7 @@ export default class Slider extends Component {
 	constructor(props) {
 		super(props)
 
-		this.turn = this.turn.bind(this)
-
+		this.onTurn = this.onTurn.bind(this)
 		this.pausePlay = this.pausePlay.bind(this)
 		this.goPlay = this.goPlay.bind(this)
 
@@ -22,7 +21,7 @@ export default class Slider extends Component {
 		}
 	}
 
-	turn(n) {
+	onTurn(n) {
 		var itemLen = this.props.items.length
 		var _n = this.state.nowLocal + n
 
@@ -40,7 +39,7 @@ export default class Slider extends Component {
 	goPlay() {
 		if (this.props.autoplay) {
 			this.autoPlayFlag = setInterval(() => {
-				this.turn(1)
+				this.onTurn(1)
 			}, this.props.delay * 1000)
 		}
 	}
@@ -64,9 +63,9 @@ export default class Slider extends Component {
 			return <SliderItem item={item} count={count} key={`item${index}`} />
 		})
 
-		let arrowsNode = <SliderArrows turn={this.turn} />
+		let arrowsNode = <SliderArrows onTurn={this.onTurn} />
 
-		let dotsNode = <SliderDots turn={this.turn} count={count} nowLocal={this.state.nowLocal} />
+		let dotsNode = <SliderDots onTurn={this.onTurn} count={count} nowLocal={this.state.nowLocal} />
 
 
 		return (
@@ -74,7 +73,7 @@ export default class Slider extends Component {
 		         onMouseOver={this.props.pause && this.pausePlay || null}
 		         onMouseOut={this.props.pause && this.goPlay || null}>
 		         <ul style={{
-		         	left: -100 * this.state.nowlocal + "%",
+		         	left: -100 * this.state.nowLocal + "%",
 		         	transitionDuration: this.props.speed + "s",
 		         	width: this.props.items.length * 100 + "%"
 		         }}>
@@ -89,8 +88,8 @@ export default class Slider extends Component {
 }
 
 Slider.defaultProps = {
-	speed: 1,
-	deplay: 2,
+	speed: 1.5,
+	deplay: 3,
 	pause: true,
 	autoplay: true,
 	dots: true,

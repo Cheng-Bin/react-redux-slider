@@ -28,13 +28,13 @@ var config = {
 	output: {
 		path: path.join(__dirname, outputPath),
 		filename: 'js/index.bundle.js',
-		publicPath: isProduction() ? 'http://localhost:3000' : 'http://localhost: 3000'
+		publicPath: isProduction() ? 'http://localhost:3000/' : 'http://localhost:3000/'
 	},
 	module: {
 		loaders: [
 		    {
 		    	test: /(\.jsx?$)/,
-		    	loader: 'babel?presets[]=es2015&presets[]=react',
+		    	loader: 'babel',
 		    	exclude: /node_modules/
 		    },
 		    {
