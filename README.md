@@ -1,5 +1,7 @@
 # react-redux-slider
 
+![Alt text](/docs/slider1.png)
+![Alt text](/docs/slider2.jpg)
 
 
 ###Install
